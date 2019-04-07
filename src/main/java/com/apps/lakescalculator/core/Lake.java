@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
+//ToDo lombock
 public class Lake {
-
+    // ToDo бесмысленная штука, дефолтный equals/hashCode работает не хуже
     private final String id = UUID.randomUUID().toString();
     private final int volume;
     private final int mirror;

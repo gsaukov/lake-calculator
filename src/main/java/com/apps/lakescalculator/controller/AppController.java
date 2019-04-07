@@ -22,10 +22,12 @@ public class AppController {
 
     @PostMapping("/")
     public String calculator(@RequestParam("surface") String surface, Model model) {
+        //ToDo или правильный error handling или никакого
         try {// cool error handling.
             List<Lake> lakes = service.calculate(parser.parse(surface));
             model.addAttribute("lakes", lakes);
         } catch (Exception e) {
+            //ToDo где логирование ошибок?
             return "lakecalculator";
         }
         return "lakecalculator";
@@ -33,19 +35,23 @@ public class AppController {
 
     @GetMapping("/{id}")
     public String visualizator(@PathVariable("id") String id, Model model) {
+        //ToDo или правильный error handling или никакого
         try {// cool error handling.
             model.addAttribute("visualization", service.visualize(id));
         } catch (Exception e) {
+            //ToDo где логирование ошибок?
             return "lakevisualization";
         }
         return "lakevisualization";
     }
 
+    // Todo лучше final переменная и Autowired в конструкторе
     @Autowired
     public void setParser(InputParser parser) {
         this.parser = parser;
     }
 
+    // Todo лучше final переменная и Autowired в конструкторе
     @Autowired
     public void setService(LakeCalculatorService service) {
         this.service = service;

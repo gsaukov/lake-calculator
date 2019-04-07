@@ -2,6 +2,7 @@ package com.apps.lakescalculator.controller;
 
 import org.springframework.stereotype.Service;
 
+// ToDo это выглядит как Utils.class незачем делать его бином
 @Service
 public class InputParser {
 
