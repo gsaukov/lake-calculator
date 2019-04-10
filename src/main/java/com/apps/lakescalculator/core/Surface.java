@@ -3,7 +3,7 @@ package com.apps.lakescalculator.core;
 import java.util.Objects;
 
 public class Surface {
-
+    //ToDo where getter?
     final int val, index;
 
     int depth;

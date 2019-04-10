@@ -6,6 +6,7 @@ final class ValComparator implements Comparator<Surface> {
 
     @Override
     public int compare(Surface surface1, Surface surface2) {
+        //ToDo Integer.compare(surface1.val, surface2.val)
         if (surface1.val < surface2.val) {
             return 1;
         } else if (surface1.val > surface2.val) {

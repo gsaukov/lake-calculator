@@ -6,6 +6,7 @@ final class IndexComparator implements Comparator<Surface> {
 
     @Override
     public int compare(Surface surface1, Surface surface2) {
+        // ToDo return Integer.compare(surface1.index, surface2.index);
         if (surface1.index < surface2.index) {
             return -1;
         } else if (surface1.index > surface2.index) {
