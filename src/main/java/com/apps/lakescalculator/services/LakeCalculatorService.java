@@ -19,14 +19,14 @@ public class LakeCalculatorService {
 
     public List<Lake> calculate(int[] arr) {
         List<Lake> lakes = calculator.calculate(arr);
-        for(Lake lake : lakes){
+        for (Lake lake : lakes) {
             persistanse.put(lake.getId(), lake);
         }
         return lakes;
     }
 
-    public String visualize (String id){
-        if(persistanse.containsKey(id)){
+    public String visualize(String id) {
+        if (persistanse.containsKey(id)) {
             return visualizator.visualize(persistanse.get(id));
         } else {
             return "nothing found for this id: " + id;

@@ -78,9 +78,9 @@ public final class LakesCalculator {
         int totalMaxHeight = 0;
         int totalMinSeaLevel = Integer.MAX_VALUE;
 
-        for(List<Surface> lake : lakes){
+        for (List<Surface> lake : lakes) {
             int leftBank = lake.get(0).val;
-            int rightBank = lake.get(lake.size() -1).val;
+            int rightBank = lake.get(lake.size() - 1).val;
             int seaLevel = leftBank < rightBank ? leftBank : rightBank;
             int maxHeight = leftBank < rightBank ? rightBank : leftBank;
             totalMaxHeight = totalMaxHeight < maxHeight ? maxHeight : totalMaxHeight;
@@ -92,12 +92,12 @@ public final class LakesCalculator {
                 surface.depth = seaLevel > surface.val ? seaLevel - surface.val : 0;
                 volume += surface.depth;
                 totalVolume += surface.depth;
-                if(surface.depth > 0){
+                if (surface.depth > 0) {
                     mirror += 1;
                     totalMirror += 1;
-                    if(surface.depth > maxDepth){
+                    if (surface.depth > maxDepth) {
                         maxDepth = surface.depth;
-                        if(surface.depth > totalMaxDepth){
+                        if (surface.depth > totalMaxDepth) {
                             totalMaxDepth = surface.depth;
                         }
                     }
@@ -109,18 +109,18 @@ public final class LakesCalculator {
                     .withSeaLevel(seaLevel)
                     .withMaxDepth(maxDepth)
                     .withMaxHeight(maxHeight)
-                    .withAverageArithmeticDepth((float)volume / mirror)
+                    .withAverageArithmeticDepth((float) volume / mirror)
                     .withLakeSurface(lake)
                     .build());
         }
-        if(!calculatedLakes.isEmpty()){
+        if (!calculatedLakes.isEmpty()) {
             calculatedLakes.add(new Lake.Builder()
                     .withVolume(totalVolume)
                     .withMirror(totalMirror)
                     .withMaxDepth(totalMaxDepth)
                     .withSeaLevel(totalMinSeaLevel)
                     .withMaxHeight(totalMaxHeight)
-                    .withAverageArithmeticDepth((float)totalVolume / totalMirror)
+                    .withAverageArithmeticDepth((float) totalVolume / totalMirror)
                     .setTotal(true)
                     .build());
 

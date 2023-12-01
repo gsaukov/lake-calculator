@@ -3,8 +3,9 @@ package com.apps.lakescalculator.core;
 import java.util.Objects;
 
 public class Surface {
-    //ToDo where getter?
-    final int val, index;
+    final int val;
+
+    final int index;
 
     int depth;
 
@@ -24,5 +25,17 @@ public class Surface {
     @Override
     public int hashCode() {
         return Objects.hash(index);
+    }
+
+    public int getVal() {
+        return val;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public int getDepth() {
+        return depth;
     }
 }

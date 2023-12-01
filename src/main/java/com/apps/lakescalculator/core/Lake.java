@@ -18,7 +18,7 @@ public class Lake {
     private final List<Surface> lakeSurface;
 
 
-    private Lake(Builder builder){
+    private Lake(Builder builder) {
         this.volume = builder.volume;
         this.seaLevel = builder.seaLevel;
         this.maxDepth = builder.maxDepth;
